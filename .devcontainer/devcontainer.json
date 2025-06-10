@@ -9,9 +9,14 @@
 		"vscode": {
 			"extensions": [
 				"ms-azuretools.vscode-docker",
-				"m4ttbit.cyan-bits",
+				"maheshgaikwad.night-cyan",
 				"ms-python.python",
-			]
+				"vscodevim.vim"
+			],
+			"settings": {
+				"terminal.integrated.fontSize": 20,
+				"editor.fontSize": 14
+			}
 		}
 	}
 
