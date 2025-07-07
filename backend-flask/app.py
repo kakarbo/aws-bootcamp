@@ -47,8 +47,8 @@ from time import strftime
 # LOGGER.addHandler(cw_handler)
 # LOGGER.info("Test long")
 
-# xray_url = os.getenv("AWS_XRAY_URL")
-# xray_recorder.configure(service="Cruddur", dynamic_naming=xray_url)
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service="Cruddur", dynamic_naming=xray_url)
 
 # Initialize tracing and an exporter that can send data to Honeycomb
 provider = TracerProvider()
@@ -63,7 +63,8 @@ tracer = trace.get_tracer(__name__)
 
 app = Flask(__name__)
 
-# XRayMiddleware(app, xray_recorder)
+XRayMiddleware(app, xray_recorder)
+
 # Initialize automatic instrumentation with Flask
 RequestsInstrumentor().instrument()
 FlaskInstrumentor().instrument_app(app)
